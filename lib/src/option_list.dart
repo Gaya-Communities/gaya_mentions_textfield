@@ -19,20 +19,17 @@ class OptionList extends StatelessWidget {
 
   final BoxDecoration? suggestionListDecoration;
 
-  final ScrollController _scrolleController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return data.isNotEmpty
         ? Container(
-            decoration:
-                suggestionListDecoration ?? BoxDecoration(color: Colors.white),
+            decoration: suggestionListDecoration ?? BoxDecoration(color: Colors.white),
             constraints: BoxConstraints(
               maxHeight: suggestionListHeight,
               minHeight: 0,
             ),
             child: ListView.builder(
               itemCount: data.length,
-              controller: _scrolleController,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return GestureDetector(
